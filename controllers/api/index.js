@@ -8,11 +8,7 @@ router.post('/add/:id', async (req, res) => {
     console.log(req.session.email);
 
     try {
-        // console.log(req.session)
-        // find all exercises .findAll
-        //         // "exercise_id": "4",
-        // // "login_email": "req.sesson" 
-        // // const test = req.body + "login_email" + ' + session.login.email
+      
         const addEx = await UserExercises.create({
             exercise_id: parseInt(req.params.id),
             login_email: req.session.email
@@ -29,9 +25,10 @@ router.post('/add/:id', async (req, res) => {
         console.log("======++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++===================================================================================")
 
 
+
         const myExercises = addEx.map(e => e.get({ plain: true }));
         console.log(myExercises)
-        res.json("hi")
+        res.json(myExercises)
         
 
         // error
@@ -41,15 +38,22 @@ router.post('/add/:id', async (req, res) => {
 });
 
 
-// router.delete('/delexercise', ensureAuthenticated , async (req, res) => {
-//     try {
+router.delete('/delexercise',  async (req, res) => {
+    try {
+
+        listData = await UserExercises.findOne()
+        delExData = await UserExercises.destroy({
+            where: { id : parseInt(req.params.id) }
+        });
+
+        res.json(delExData)
 
 
 
-//     } catch (err) {
-//         res.status(500).json(err);
-//       }
-//     });
+    } catch (err) {
+        res.status(500).json(err);
+      }
+    });
 
 
 

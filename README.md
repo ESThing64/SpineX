@@ -73,49 +73,22 @@ SpineX is a web application for chiropractors to help their clients manage the e
 
 Run the following commands for installation:
 
-```bash
-npm init
+
+Install the dependencies 
+```CLI
+npm i
 ```
 
-```bash
-npm install --save mysql2
+Ensure mySQL is installed and the server is running. For more details please visist.
+https://www.mysql.com/
+
+
+Seed the database.
+```CLI
+npm run seed
 ```
 
-```bash
-npm i sequelize
-```
 
-```bash
-npm install dotenv
-```
-
-```bash
-npm install bcrypt
-```
-
-```bash
-npm install express
-```
-
-```bash
- npm install express-handlebars
-```
-
-```bash
-npm install express-session
-```
-
-```bash
-npm i handlebars
-```
-
-```bash
-npm install connect-session-sequelize
-```
-
-```bash
-npm i @popperjs/core
-```
 
 # Usage
 
