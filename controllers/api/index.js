@@ -20,6 +20,7 @@ router.post('/add/:id', async (req, res) => {
         
         );
 
+
         const myExercises = addEx.map(e => e.get({ plain: true }));
         console.log(myExercises)
         res.json(myExercises)
@@ -32,8 +33,10 @@ router.post('/add/:id', async (req, res) => {
 });
 
 
+
 router.delete('/del/:id', async (req, res) => {
     try {
+
 
         console.log(req.params.id)
 
