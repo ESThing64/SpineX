@@ -14,12 +14,7 @@ let error_type={};
 
     if (!loginData) {
 error_type =  {error: "Your password or email is not correct."}
-//return error_type;
-      // return {
-      //   message: 'The email you entered is incorrect'}
       return res.render("homepage", {error: "Your password or email is not correct."});
-      // res.status(400)
-      // res.send({message: "Your password or email is not correct."});
     }
 
     const validatePassword = await loginData.checkPassword(req.body.password);
@@ -28,10 +23,6 @@ error_type =  {error: "Your password or email is not correct."}
 
     if (!validatePassword) {
       error_type = {error :"Your password or email is not correct."}
-      return res.render("homepage", {error :"Your password or email is not correct."});
-    //   res.status(400)
-    //   res.render({message: "Your password or email is not correct."});
-    //   return;
    }
 
   
@@ -49,8 +40,6 @@ error_type =  {error: "Your password or email is not correct."}
       
       })
     });
-
-    console.log(req.session)
 
 
 } catch (err){

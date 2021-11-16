@@ -8,10 +8,19 @@ $(document).ready(function(){
        const response = await fetch('/api/del/'+id, {
         method: 'DELETE',
 
-      });
-      
+    
+    
+    });
+    if (response.ok) {
 
-    })
+
+        document.location.reload()
+      } else {
+        alert(response.statusText);
+      }
+
+    });
+   
 
     
 });

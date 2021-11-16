@@ -4,8 +4,7 @@ const session = require('express-session');
 
 // add to user's list
 router.post('/add/:id', async (req, res) => {
-    console.log(req.params);
-    console.log(req.session.email);
+ 
 
     try {
         const addEx = await UserExercises.create({
@@ -21,9 +20,9 @@ router.post('/add/:id', async (req, res) => {
         );
 
 
-        const myExercises = addEx.map(e => e.get({ plain: true }));
-        console.log(myExercises)
-        res.json(myExercises)
+        // const myExercises = addEx.map(e => e.get({ plain: true }));
+        // console.log(myExercises)
+        res.json(addEx)
         
 
         // error
@@ -37,15 +36,13 @@ router.post('/add/:id', async (req, res) => {
 router.delete('/del/:id', async (req, res) => {
     try {
 
-
-        console.log(req.params.id)
-
-        console.log('HEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY');
         const deleteUserExercise = await UserExercises.destroy({
             where: {id: req.params.id}
         })
+           
 
         res.json(deleteUserExercise)
+          
     } catch (err) {
         res.status(500).json(err);
       }
