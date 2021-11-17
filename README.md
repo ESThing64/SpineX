@@ -6,10 +6,42 @@ http://backBoneX.net
 
 # Members
 
-* Christopher Noriega
-* Faizila Amlani
-* John Coakley
-
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Faizila">
+        <img
+          alt="Faizila"
+          src="https://avatars.githubusercontent.com/u/78191579?v=4"
+          width="117"
+        />
+        <br />
+        Faizila
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/chris-noriega14">
+        <img
+          alt="Chris"
+          src="https://avatars.githubusercontent.com/u/90105704?v=4"
+          width="117"
+        />
+        <br />
+       Chris
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/ESThing64">
+        <img
+          alt="ESThing"
+          src="https://avatars.githubusercontent.com/u/89550738?v=4"
+          width="117"
+        />
+        <br />
+        John Coakley
+      </a>
+    </td>
+</table>
 # Powerpoint Presentation Link
 
 https://docs.google.com/presentation/d/1DUCBjjOIe4yf2fnxCC23JZO3H7Ldp44Q/edit?usp=sharing&ouid=110846898095699650282&rtpof=true&sd=true

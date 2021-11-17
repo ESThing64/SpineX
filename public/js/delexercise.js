@@ -11,7 +11,7 @@ $(document).ready(function () {
     if (response.ok) {
 
       await Toastify({
-        text: "That exercise has been delete from your list!",
+        text: "That exercise has been deleted from your list!",
         duration: 3000,
         destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
