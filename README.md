@@ -1,6 +1,6 @@
-# GroupProject2
+# backBoneX
 
-# Heroku Link
+## Deployed application
 
 http://backBoneX.net
 
