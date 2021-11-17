@@ -4,25 +4,17 @@ const session = require('express-session');
 
 // add to user's list
 router.post('/add/:id', async (req, res) => {
- 
-
     try {
-        const addEx = await UserExercises.create({
+        const addExercise = await UserExercises.create({
             exercise_id: parseInt(req.params.id),
-            login_email: req.session.email
-        },{
+            login_email: req.session.email},{
          include: [{
             model: Exercises,
             attributes: ['exercise_name','img_start','img_end','starting_tip', 'ending_tip']
-        }]   
-        }
-        
-        );
+            }]   
+        });
 
-
-        // const myExercises = addEx.map(e => e.get({ plain: true }));
-        // console.log(myExercises)
-        res.json(addEx)
+        res.json(addExercise)
         
 
         // error

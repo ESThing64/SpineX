@@ -31,8 +31,6 @@ error_type =  {error: "Your password or email is not correct."}
       req.session.user_id = loginData.id
       req.session.email = loginData.email;
       req.session.logged_in = true;
-
-   
       
       res.render('dashboard', {
         loggedIn: req.session.logged_in,
@@ -59,11 +57,7 @@ router.post('/register', async  (req, res) => {
   
   const { first_name, last_name, email, password, password2 } = req.body
   try {
- 
-
-    // let regData =  await Login.findOne({ email: email });
-   
-
+  
     let errors = [];
 
     if (!first_name || !last_name || !email || !password || !password2) {
@@ -104,28 +98,24 @@ router.post('/register', async  (req, res) => {
           email: email,
           password: password       
         });
+
+        req.session.save(() => {
+          req.session.user_id = newLogin.id
+          req.session.email = newLogin.email;
+          req.session.logged_in = true;
+          
+          res.render('dashboard', {
+          
+            loggedIn: req.session.logged_in,
+          
+          });
+        });
+    
+
        }    
       }
 
 
-      req.session.save(() => {
-        console.log
-        // req.session.user_id = regData.id
-        // req.session.email = regData.email;
-        // req.session.logged_in = true;
-  
-     
-        
-        res.render('dashboard', {
-          loggedIn: req.session.loggedIn,
-          loggedIn: req.body.loggedIn
-        })
-      });
-
-
-      console.log(req.session)
-      console.log(req.body)
-      
 
   } catch (err) {
     res.status(500).json(err);
@@ -142,13 +132,10 @@ router.post('/register', async  (req, res) => {
         // Remove the session variables
         req.session.destroy(() => {
           res.status(204).end();
-          
-        });
+          });
 
         res.redirect('/');
     
-
-        // res.render('/login')
       } else {
         res.status(404).end();
       }
