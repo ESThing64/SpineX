@@ -7,7 +7,6 @@ class Login extends Model {
         return bcrypt.compareSync(loginPw, this.password);
     }
 }
-
 Login.init(
     {
         id : {
