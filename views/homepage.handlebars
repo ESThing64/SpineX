@@ -137,6 +137,13 @@
             placeholder="Confirm Password"
           />
         </div>
+
+        {{#if error}}
+        <div>
+          <div class="alert alert-danger">heeyyyy{{error}}</div>
+         {{/if}}
+        </div>
+
         <button type="submit" class="btn btn-primary btn-block">Submit</button>
       </form>
              

@@ -107,6 +107,7 @@ router.post('/register', async  (req, res) => {
           res.render('dashboard', {
           
             loggedIn: req.session.logged_in,
+            errors
           
           });
         });
