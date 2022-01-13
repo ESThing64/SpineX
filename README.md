@@ -1,8 +1,8 @@
-# backBoneX
+# SpineX
 
 ## Deployed application
 
-http://backBoneX.net
+https://spinex.herokuapp.com
 
 # Members
 
